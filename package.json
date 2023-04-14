@@ -5,7 +5,11 @@
   "scripts": {
     "start:dev": "nx serve api",
     "build": "nx build",
-    "test": "nx test"
+    "test": "nx test",
+    "db:up": "npm run db:docker && npm run db:dev-migrate && npm run db:create-client -- --watch",
+    "db:docker": "docker-compose -f tools/docker/dev.docker-compose.yaml up -d --no-recreate --remove-orphans",
+    "db:create-client": "npx prisma generate",
+    "db:dev-migrate": "env-cmd --no-override -f .local.env npx prisma migrate dev"
   },
   "prisma": {
     "schema": "libs/api/database/src/lib/schema.prisma"
