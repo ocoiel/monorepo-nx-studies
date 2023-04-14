@@ -7,6 +7,9 @@
     "build": "nx build",
     "test": "nx test"
   },
+  "prisma": {
+    "schema": "libs/api/database/src/lib/schema.prisma"
+  },
   "private": true,
   "dependencies": {
     "@mercuriusjs/gateway": "^1.2.0",
@@ -14,6 +17,7 @@
     "@nestjs/core": "^9.0.0",
     "@nestjs/graphql": "^11.0.5",
     "@nestjs/mercurius": "^11.0.5",
+    "@nestjs/platform-express": "^9.0.0",
     "@nestjs/platform-fastify": "^9.4.0",
     "axios": "^1.0.0",
     "graphql": "^16.6.0",
